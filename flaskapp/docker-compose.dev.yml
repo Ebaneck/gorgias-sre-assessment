@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  web:
+    build: ./flaskapp
+    command: flask run --host=0.0.0.0 --port=5000
+    volumes:
+      - ./flaskapp/:/usr/src/app/
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_flask
+      - POSTGRES_PASSWORD=hello_flask
+      - POSTGRES_DB=hello_flask_dev
+volumes:
+  postgres_data:
