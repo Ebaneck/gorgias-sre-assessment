@@ -27,6 +27,7 @@ jobs:
         uses: cycjimmy/semantic-release-action@v3
         id: semantic
         with:
+          working_directory: ./flaskapp
           branches: |
             [
               'main'
