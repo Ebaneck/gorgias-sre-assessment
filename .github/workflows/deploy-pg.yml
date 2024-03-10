@@ -1,0 +1,52 @@
+name: Deploy helm charts
+on:
+    workflow_dispatch:
+    push:
+      branches:
+        - main
+      paths:
+        - helm-charts/values/**
+
+env:
+    PROJECT_ID: ${{ secrets.GKE_PROJECT_ID }}
+    GKE_CLUSTER: gorgias-sre-assessment
+    GKE_REGION: us-central1
+    GKE_ZONE: us-central1-a
+jobs:
+  deploy:
+    name: Setup helm and deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    continue-on-error: false
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Helm
+        uses: azure/setup-helm@v3.5
+        with:
+            version: v3.12.0
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+            credentials_json: '${{ secrets.GKE_SA_KEY }}'
+
+      - name: Set up GKE credentials
+        uses: google-github-actions/get-gke-credentials@v0
+        with:
+            cluster_name: ${{ env.GKE_CLUSTER }}
+            location: ${{ env.GKE_ZONE }}
+
+      - name: Install postgresql from Bitnami helm chart
+        run: |
+            helm repo add bitnami https://charts.bitnami.com/bitnami
+            helm repo update
+            helm upgrade --install postgresql bitnami/postgresql -f helm-charts/values/postgres.yaml \
+                -n database --create-namespace \
+                --set auth.postgresPassword=${{ secrets.PG_ADMIN_PASSWORD }} \
+                --set auth.replicationPassword=${{ secrets.PG_REPLICATION_PASSWORD }} \
+                --set primary.initdb.password=${{ secrets.PG_ADMIN_PASSWORD }} \
+                --set auth.password=${{ secrets.PG_WEBAPP_PASSWORD }} \
+                --set nameOverride="pg-us1" --version 13.4.0

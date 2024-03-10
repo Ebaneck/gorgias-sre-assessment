@@ -2,9 +2,12 @@ image:
   tag: 16.2.0-debian-12-r6
 auth:
   enablePostgresUser: true
-  postgresPassword: {{ postgresql.postgres_user.password }}
+  postgresPassword: ""
   replicationUsername: repl_user
-  replicationPassword: repl_password
+  replicationPassword: ""
+  username: webapp_user
+  password: ""
+  database: webapp
 
 architecture: replication
 replication:
@@ -13,14 +16,12 @@ replication:
 primary:
   initdb:
     user: postgres
-    password: {{ postgresql.postgres_user.password }}
+    password: ""
   resources:
-    limits:
-      cpu: 250m
-      memory: 2048Mi
+    limits: {}
     requests:
       cpu: 50m
-      memory: 512Mi
+      memory: 256Mi
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -37,12 +38,10 @@ primary:
 readReplicas:
   replicaCount: 1
   resources:
-    limits:
-      cpu: 250m
-      memory: 2048Mi
+    limits: {}
     requests:
       cpu: 50m
-      memory: 512Mi
+      memory: 256Mi
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
