@@ -39,10 +39,13 @@ jobs:
             cluster_name: ${{ env.GKE_CLUSTER }}
             location: ${{ env.GKE_ZONE }}
 
+      - name: Setup helm chart repository
+        run: |
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+          helm repo update
       - name: Install postgresql from Bitnami helm chart
         run: |
-            helm repo add bitnami https://charts.bitnami.com/bitnami
-            helm repo update
             helm upgrade --install postgresql bitnami/postgresql -f helm-charts/values/postgres.yaml \
                 -n database --create-namespace \
                 --set auth.postgresPassword=${{ secrets.PG_ADMIN_PASSWORD }} \
@@ -50,3 +53,9 @@ jobs:
                 --set primary.initdb.password=${{ secrets.PG_ADMIN_PASSWORD }} \
                 --set auth.password=${{ secrets.PG_WEBAPP_PASSWORD }} \
                 --set nameOverride="pg-us1" --version 13.4.0
+
+      - name: Install ingress controller
+        run: |
+            helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx -f helm-charts/values/ingress.yaml \
+                -n ingress-nginx --create-namespace \
+                --version 4.8.0

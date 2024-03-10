@@ -7,7 +7,12 @@ A simple flask application deployed on GKE
 - Postgres database deployed using Helm & Github actions
 - Infrastructure provisioned with Terraform on GCP
 - Docker-compose setup for local development & testing
-- Github actions for CI/CD
+- Github actions for CI/CD:
+  - Linting & semantic release
+  - Package, build & push Docker images
+  - Deploys flask app
+  - Deploys postgres
+  - Deploys an ingress controller
 
 
 ## Docker instructions
@@ -29,3 +34,13 @@ To deploy the infrastructure we need to:
 * Create an IAM user with a service account & required permissions for terraform
 * Enable Service Usage APIs
 * Finally use Terraform to plan & apply changes.
+
+
+## Connecting to GKE cluster using CLI
+
+- Install the gcloud cli tooling & kubectl using the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl)
+- Authenticate using the gke-gcloud-auth-plugin
+- Finally, get the credentials using:
+  ```
+  gcloud container clusters get-credentials gorgias-sre-assessment --zone us-central1-a --project bubbly-sentinel-416701
+  ```
