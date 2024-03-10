@@ -14,6 +14,10 @@ resource "google_container_cluster" "primary" {
     "us-central1-b"
   ]
 
+  node_config {
+    disk_size_gb = 50
+  }
+
   addons_config {
     http_load_balancing {
       disabled = true
