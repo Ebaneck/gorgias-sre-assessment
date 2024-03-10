@@ -1,0 +1,60 @@
+image:
+  tag: 16.2.0-debian-12-r6
+auth:
+  enablePostgresUser: true
+  postgresPassword: {{ postgresql.postgres_user.password }}
+  replicationUsername: repl_user
+  replicationPassword: repl_password
+
+architecture: replication
+replication:
+  synchronousCommit: "on"
+  numSynchronousReplicas: 1
+primary:
+  initdb:
+    user: postgres
+    password: {{ postgresql.postgres_user.password }}
+  resources:
+    limits:
+      cpu: 250m
+      memory: 2048Mi
+    requests:
+      cpu: 50m
+      memory: 512Mi
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: "node-role.kubernetes.io/infra"
+              operator: Exists
+  persistence:
+    enabled: true
+    size: 30Gi
+
+readReplicas:
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 250m
+      memory: 2048Mi
+    requests:
+      cpu: 50m
+      memory: 512Mi
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: "node-role.kubernetes.io/infra"
+              operator: Exists
+  persistence:
+    enabled: true
+    size: 30Gi
+
+serviceAccount:
+  create: true
+  automountServiceAccountToken: true
+
+metrics:
+  enabled: false
