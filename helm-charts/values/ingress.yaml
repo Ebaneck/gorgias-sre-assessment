@@ -13,10 +13,10 @@ controller:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-            - key: app.kubernetes.io/name
+            - key: cloud.google.com/gke-nodepool
               operator: In
               values:
-                - ingress-nginx
+                - app
         topologyKey: "kubernetes.io/hostname"
   replicaCount: 1
   admissionWebhooks:
