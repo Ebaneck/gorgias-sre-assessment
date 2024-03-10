@@ -26,8 +26,10 @@ primary:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
           - matchExpressions:
-            - key: "node-role.kubernetes.io/infra"
-              operator: Exists
+            - key: "cloud.google.com/gke-nodepool"
+              operator: In
+              values:
+                - general
   persistence:
     enabled: true
     size: 30Gi
@@ -46,8 +48,10 @@ readReplicas:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
           - matchExpressions:
-            - key: "node-role.kubernetes.io/infra"
-              operator: Exists
+            - key: "cloud.google.com/gke-nodepool"
+              operator: In
+              values:
+                - general
   persistence:
     enabled: true
     size: 30Gi
