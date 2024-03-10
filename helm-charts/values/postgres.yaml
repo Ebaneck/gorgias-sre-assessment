@@ -34,6 +34,8 @@ primary:
   persistence:
     enabled: true
     size: 30Gi
+  podLabels:
+    service/statefulset: "postgres-main"
 
 readReplicas:
   replicaCount: 1
@@ -54,6 +56,8 @@ readReplicas:
   persistence:
     enabled: true
     size: 30Gi
+  podLabels:
+    service/statefulset: "postgres-replica"
 
 serviceAccount:
   create: true
