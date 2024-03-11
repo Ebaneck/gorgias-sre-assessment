@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.4.0...v1.5.0) (2024-03-11)
+
+
+### Features
+
+* ensure db secret are used ([b6470d6](https://github.com/Ebaneck/gorgias-sre-assessment/commit/b6470d63746effec19abb9955793426830162680))
+
 # [1.4.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.3.2...v1.4.0) (2024-03-11)
 
 
