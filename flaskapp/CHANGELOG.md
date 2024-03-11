@@ -1,3 +1,11 @@
+## [1.3.2](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.3.1...v1.3.2) (2024-03-11)
+
+
+### Bug Fixes
+
+* add db schema sql file ([940c77f](https://github.com/Ebaneck/gorgias-sre-assessment/commit/940c77f85c2da9fe9e447c9469ce1e088a692fd2))
+* donot base64 encode port ([6226150](https://github.com/Ebaneck/gorgias-sre-assessment/commit/622615049ac85e6c3cee4fe104290dfb9575cdc2))
+
 ## [1.3.1](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.3.0...v1.3.1) (2024-03-11)
 
 
