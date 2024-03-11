@@ -42,7 +42,9 @@ To deploy the infrastructure we need to:
 - Authenticate using the gke-gcloud-auth-plugin
 - Finally, get the credentials using:
   ```
-  gcloud container clusters get-credentials gorgias-sre-assessment --zone us-central1-a --project bubbly-sentinel-416701
+  gcloud container clusters get-credentials gorgias-sre-assessment \
+    --zone us-central1-a \
+    --project bubbly-sentinel-416701
   ```
 
 ## Accessing the flask application from a browser

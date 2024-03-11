@@ -1,0 +1,38 @@
+fullnameOverride: "flaskapp"
+
+replicaCount: 3
+
+image:
+  repository: claudeforlife/flaskapp
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: external-nginx
+  hosts:
+    - host: webapp.gorgias.com
+      paths:
+      - path: /
+        backend:
+          serviceName: flaskapp
+          servicePort: 5000
+  tls: []
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 256Mi
+  requests:
+    cpu: 50m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector:
+  cloud.google.com/gke-nodepool: app
