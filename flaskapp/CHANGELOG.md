@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.4...v1.8.5) (2024-03-11)
+
+
+### Bug Fixes
+
+* add missing update url ([30cd428](https://github.com/Ebaneck/gorgias-sre-assessment/commit/30cd428bbc1944c49a6882e7422c03ddd28a7a13))
+
 ## [1.8.4](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.3...v1.8.4) (2024-03-11)
 
 
