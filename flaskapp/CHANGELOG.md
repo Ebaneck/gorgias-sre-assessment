@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.5.0...v1.6.0) (2024-03-11)
+
+
+### Features
+
+* add default for db port ([c01c960](https://github.com/Ebaneck/gorgias-sre-assessment/commit/c01c96023aaae6b27a6409f02a89b8bf85ff4bb6))
+
 # [1.5.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.4.0...v1.5.0) (2024-03-11)
 
 
