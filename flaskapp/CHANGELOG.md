@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.1.0...v1.2.0) (2024-03-11)
+
+
+### Features
+
+* add todo app routes ([027a332](https://github.com/Ebaneck/gorgias-sre-assessment/commit/027a332acde4e22b58f5fdfad879b10b2119aae6))
+
 # [1.1.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.0.0...v1.1.0) (2024-03-11)
 
 
