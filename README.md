@@ -44,3 +44,10 @@ To deploy the infrastructure we need to:
   ```
   gcloud container clusters get-credentials gorgias-sre-assessment --zone us-central1-a --project bubbly-sentinel-416701
   ```
+
+## Accessing the flask application from a browser
+- Add the following entry to `/etc/hosts`
+  ```
+  34.42.92.122 webapp.gorgias.com
+  ```
+- On the browser, access the application using [webapp.gorgias.com](http://webapp.gorgias.com)
