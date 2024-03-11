@@ -91,7 +91,5 @@ secrets:
     key: DB_NAME
   dbUrl:
     key: DB_URL
-  dbPort:
-    key: DB_PORT
   appSecret:
     key: APP_SECRET

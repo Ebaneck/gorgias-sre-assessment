@@ -19,7 +19,7 @@ PASSWORD = os.getenv("PG_PASSWORD")
 
 SECRET_KEY = os.getenv("APP_SECRET")
 DB_URL = os.getenv("PG_URL")
-DB_PORT = os.getenv("PG_PORT")
+DB_PORT = os.getenv("PG_PORT", 5432)
 
 app = Flask(__name__)
 app.secret_key = SECRET_KEY
