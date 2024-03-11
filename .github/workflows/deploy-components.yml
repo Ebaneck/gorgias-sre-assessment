@@ -59,3 +59,13 @@ jobs:
             helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx -f helm-charts/values/ingress.yaml \
                 -n ingress-nginx --create-namespace \
                 --version 4.8.0
+
+      - name: Install flask webapp
+        run: |
+            cd helm-charts/flaskapp-chart && helm upgrade --install webapp . -f helm-charts/values/webapp.yaml \
+                -n webapp --create-namespace \
+                --set image.tag=${{ github.sha }} \
+                --set secrets.username.value=${{ secrets.PG_WEBAPP_USER }} \
+                --set secrets.password.value=${{ secrets.PG_WEBAPP_PASSWORD }} \
+                --set secrets.dbName.value=${{ secrets.PG_WEBAPP_DBNAME }} \
+                --set secrets.dbUrl.value=${{ secrets.PG_WEBAPP_DBURL }}
