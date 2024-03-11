@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.0...v1.8.1) (2024-03-11)
+
+
+### Bug Fixes
+
+* set default image tag to latest ([8529450](https://github.com/Ebaneck/gorgias-sre-assessment/commit/85294508c897eb62da0c6be400c214a35ee7b74b))
+
 # [1.8.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.7.0...v1.8.0) (2024-03-11)
 
 
