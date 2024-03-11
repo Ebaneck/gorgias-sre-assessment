@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h2>New Item</h2>
+  <h2>New Todo</h2>
   <form method=post>
     <p>
       <label>Title:
       <input name=title value="{{ request.form.title }}">
       </label>
     <p>
-      <label>Text:<br>
+      <label>Description:<br>
       <textarea name=text rows=10 cols=40>{{ request.form.text }}</textarea>
       </label>
     <p>
