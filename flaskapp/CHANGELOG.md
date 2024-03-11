@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.6.0...v1.7.0) (2024-03-11)
+
+
+### Features
+
+* add & use default pg port ([701111e](https://github.com/Ebaneck/gorgias-sre-assessment/commit/701111ef7d7d9be64c4cbaf9a7c744e29b3fd1b4))
+* cleanup dockerfile and app.py ([1b89861](https://github.com/Ebaneck/gorgias-sre-assessment/commit/1b89861df3c95f3ee016110404effecc98e718a6))
+
 # [1.6.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.5.0...v1.6.0) (2024-03-11)
 
 
