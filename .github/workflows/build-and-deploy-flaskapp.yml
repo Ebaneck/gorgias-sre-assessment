@@ -137,8 +137,8 @@ jobs:
                 --set secrets.username.value=${{ secrets.PG_WEBAPP_USER }} \
                 --set secrets.password.value=${{ secrets.PG_WEBAPP_PASSWORD }} \
                 --set secrets.dbName.value=${{ secrets.PG_WEBAPP_DBNAME }} \
-                --set secrets.dbUrl.value=${{ secrets.PG_WEBAPP_DBURL }}
-                --set secrets.dbPort.value=${{ secrets.PG_WEBAPP_DBPORT }}
+                --set secrets.dbUrl.value=${{ secrets.PG_WEBAPP_DBURL }} \
+                --set secrets.dbPort.value=${{ secrets.PG_WEBAPP_DBPORT }} \
                 --set secrets.appSecret.value=${{ secrets.APP_SECRET }}
       - name: Apply ingress manifest
         run: |
