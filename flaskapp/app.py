@@ -11,10 +11,19 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped, mapped_column
 
- 
+
+# config injected from K8s secrets
+DATABASE = os.getenv("PG_DATABASE")
+USERNAME = os.getenv("PG_USER")
+PASSWORD = os.getenv("PG_PASSWORD")
+
+SECRET_KEY = os.getenv("APP_SECRET")
+DB_URL = os.getenv("PG_URL")
+DB_PORT = os.getenv("PG_PORT")
+
 app = Flask(__name__)
-app.secret_key = "Achee6phIexoh8dagiQuew0ephuga4Ih"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///todo.sqlite"
+app.secret_key = SECRET_KEY
+app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{USERNAME}:{PASSWORD}@{DB_URL}:{DB_PORT}/{DATABASE}"
 
 
 class Base(DeclarativeBase):
