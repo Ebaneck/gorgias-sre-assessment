@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.2.1...v1.3.0) (2024-03-11)
+
+
+### Features
+
+* add & inject database secrets ([0160659](https://github.com/Ebaneck/gorgias-sre-assessment/commit/01606599619c3dd17642e0467ae0f4ada317ade6))
+* add helm values for flask app deployment ([0e4a37c](https://github.com/Ebaneck/gorgias-sre-assessment/commit/0e4a37c95c8634b979956a5852ad09438d2d55e0))
+* add helm-charts for flask webapp ([000b5cc](https://github.com/Ebaneck/gorgias-sre-assessment/commit/000b5cc2c97950cb1403e47e89c63f1299b2dad5))
+* inject k8s secrets to flask app ([1ff814f](https://github.com/Ebaneck/gorgias-sre-assessment/commit/1ff814f741e2c589f18f86e704fa6f3899edc239))
+
 ## [1.2.1](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.2.0...v1.2.1) (2024-03-11)
 
 
