@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.7.0...v1.8.0) (2024-03-11)
+
+
+### Features
+
+* add readme for helm chart dir ([5d47006](https://github.com/Ebaneck/gorgias-sre-assessment/commit/5d47006bf2498ee0681397d675a894b71f0004c3))
+
 # [1.7.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.6.0...v1.7.0) (2024-03-11)
 
 
