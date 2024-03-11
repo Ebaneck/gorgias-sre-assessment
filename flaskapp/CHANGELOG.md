@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.3...v1.8.4) (2024-03-11)
+
+
+### Bug Fixes
+
+* add psycopg2 to requirements.txt ([2df467c](https://github.com/Ebaneck/gorgias-sre-assessment/commit/2df467cbcd6f11d15ff64284c8c920ede29a9cf7))
+
 ## [1.8.3](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.2...v1.8.3) (2024-03-11)
 
 
