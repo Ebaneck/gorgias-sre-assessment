@@ -81,3 +81,13 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+secrets:
+  username:
+    key: USERNAME
+  password:
+    key: PASSWORD
+  dbName:
+    key: DB_NAME
+  dbUrl:
+    key: DB_URL
