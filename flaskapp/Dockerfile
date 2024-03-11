@@ -1,3 +1,4 @@
+# Refactor to use multi-stage build with builder & release stages
 FROM python:3
 
 WORKDIR /app
