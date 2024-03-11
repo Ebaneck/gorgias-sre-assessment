@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.2...v1.8.3) (2024-03-11)
+
+
+### Bug Fixes
+
+* adjust import statement ([7d173ea](https://github.com/Ebaneck/gorgias-sre-assessment/commit/7d173eabff53d342f473ea3155400fd8f402eb26))
+
 ## [1.8.2](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.1...v1.8.2) (2024-03-11)
 
 
