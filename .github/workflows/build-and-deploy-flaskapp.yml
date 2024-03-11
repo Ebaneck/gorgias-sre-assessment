@@ -126,9 +126,10 @@ jobs:
 
       - name: Install flask webapp
         run: |
+            image_version=${{ fromJSON(steps.metadata.outputs.json).labels['org.opencontainers.image.version'] }}
             cd helm-charts/flaskapp-chart && helm upgrade --install webapp . -f ../values/webapp.yaml \
                 -n app --create-namespace \
-                --set image.tag=${{ steps.metadata.outputs.labels['org.opencontainers.image.version'] }} \
+                --set image.tag=$image_version \
                 --set secrets.username.value=${{ secrets.PG_WEBAPP_USER }} \
                 --set secrets.password.value=${{ secrets.PG_WEBAPP_PASSWORD }} \
                 --set secrets.dbName.value=${{ secrets.PG_WEBAPP_DBNAME }} \
