@@ -56,11 +56,11 @@ spec:
                 secretKeyRef:
                   name: "{{ .Release.Name }}-secret"
                   key: "{{ .Values.secrets.dbUrl.key }}"
-            - name: PG_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Release.Name }}-secret"
-                  key: "{{ .Values.secrets.dbPort.key }}"
+            # - name: PG_PORT
+            #   valueFrom:
+            #     secretKeyRef:
+            #       name: "{{ .Release.Name }}-secret"
+            #       key: "{{ .Values.secrets.dbPort.key default 5432 }}"
             - name: APP_SECRET
               valueFrom:
                 secretKeyRef:
