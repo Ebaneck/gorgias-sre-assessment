@@ -1,3 +1,11 @@
+## [1.3.1](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.3.0...v1.3.1) (2024-03-11)
+
+
+### Bug Fixes
+
+* add missing gke deploy envs ([ea57451](https://github.com/Ebaneck/gorgias-sre-assessment/commit/ea5745139a5e8ecbd1fbed95cd976f86c9a86724))
+* cleanup app.py ([64177ac](https://github.com/Ebaneck/gorgias-sre-assessment/commit/64177ac15372a19f15b3041b2cc719f650ce93e5))
+
 # [1.3.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.2.1...v1.3.0) (2024-03-11)
 
 
