@@ -2,9 +2,6 @@ FROM python:3
 
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED 1
-ENV DISPLAY=:99
-
 # Install apt dependencies
 RUN apt update
 
