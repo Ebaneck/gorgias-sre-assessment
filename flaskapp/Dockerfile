@@ -2,10 +2,8 @@ FROM python:3
 
 WORKDIR /app
 
-# Install apt dependencies
 RUN apt update
 
-# Install requirements
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
