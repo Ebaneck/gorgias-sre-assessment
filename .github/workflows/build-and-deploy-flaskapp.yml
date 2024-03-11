@@ -1,14 +1,18 @@
 name: "Docker Build & Release"
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - flaskapp/**
-    tags:
-      - 'v*'
+  pull_request:
+    types: [opened, synchronize]
+
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - flaskapp/**
+#     tags:
+#       - 'v*'
 
 env:
   USER: claudeforlife
@@ -79,17 +83,17 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: "{{defaultContext}}:flaskapp"
-          # file: ./flaskapp/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: ${{ steps.metadata.outputs.tags }}
-          labels: ${{ steps.metadata.outputs.labels }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+      # - name: Build and push
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: "{{defaultContext}}:flaskapp"
+      #     # file: ./flaskapp/Dockerfile
+      #     platforms: linux/amd64
+      #     push: true
+      #     tags: ${{ steps.metadata.outputs.tags }}
+      #     labels: ${{ steps.metadata.outputs.labels }}
+      #     cache-from: type=local,src=/tmp/.buildx-cache
+      #     cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
       - name: Update Docker registry description
         uses: peter-evans/dockerhub-description@v3
@@ -103,10 +107,10 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+      # - name: Move cache
+      #   run: |
+      #     rm -rf /tmp/.buildx-cache
+      #     mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   deploy-webapp:
     needs: [build-push]
@@ -133,7 +137,7 @@ jobs:
         run: |
             cd helm-charts/flaskapp-chart && helm upgrade --install webapp . -f ../values/webapp.yaml \
                 -n app --create-namespace \
-                --set image.tag=${{ steps.metadata.outputs.labels['org.opencontainers.image.version'] }} \
+                --set image.tag=latest \
                 --set secrets.username.value=${{ secrets.PG_WEBAPP_USER }} \
                 --set secrets.password.value=${{ secrets.PG_WEBAPP_PASSWORD }} \
                 --set secrets.dbName.value=${{ secrets.PG_WEBAPP_DBNAME }} \
