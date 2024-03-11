@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.1...v1.8.2) (2024-03-11)
+
+
+### Bug Fixes
+
+* set exclusively an image tag ([c02ef89](https://github.com/Ebaneck/gorgias-sre-assessment/commit/c02ef89dfa1b7de2ee964d64b281ea89e5c2fb0f))
+
 ## [1.8.1](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.0...v1.8.1) (2024-03-11)
 
 
