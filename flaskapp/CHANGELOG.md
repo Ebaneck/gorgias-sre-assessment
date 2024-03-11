@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.3.2...v1.4.0) (2024-03-11)
+
+
+### Features
+
+* add title & description for html template ([4023d6f](https://github.com/Ebaneck/gorgias-sre-assessment/commit/4023d6f535db0729e71acf0a703eae056e3e1211))
+
 ## [1.3.2](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.3.1...v1.3.2) (2024-03-11)
 
 
