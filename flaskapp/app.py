@@ -32,7 +32,6 @@ class Todo(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str]
     text: Mapped[str]
-    done: Mapped[bool] = mapped_column(default=False)
     pub_date: Mapped[datetime] = mapped_column(default=now_utc)
 
 
@@ -63,21 +62,6 @@ def new():
 
     return render_template("new.html")
 
-
-@app.route("/update", methods=["POST"])
-def update_done():
-    for todo in db.session.execute(db.select(Todo)).scalars():
-        todo.done = f"done.{todo.id}" in request.form
-
-    flash("Updated status")
-    db.session.commit()
-    return redirect(url_for("show_all"))
-
-
-@app.route('/')
-def index():
-    return 'Hello to Flask!'
  
-# main driver function
 if __name__ == "__main__":
     app.run()
