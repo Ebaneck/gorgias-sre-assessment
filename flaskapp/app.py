@@ -12,7 +12,7 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped, mapped_column
 
 
-# config injected from K8s secrets
+# config injected by K8s secrets
 DATABASE = os.getenv("PG_DATABASE")
 USERNAME = os.getenv("PG_USER")
 PASSWORD = os.getenv("PG_PASSWORD")
