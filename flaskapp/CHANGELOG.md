@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.5...v1.8.6) (2024-03-11)
+
+
+### Bug Fixes
+
+* add comments & cleanup ([2c25e72](https://github.com/Ebaneck/gorgias-sre-assessment/commit/2c25e720be6b48d01f3567eb1e7dc35aa1f3d129))
+
 ## [1.8.5](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.8.4...v1.8.5) (2024-03-11)
 
 
