@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.2.0...v1.2.1) (2024-03-11)
+
+
+### Bug Fixes
+
+* remove unused html templates ([d1b0487](https://github.com/Ebaneck/gorgias-sre-assessment/commit/d1b04872555de1edd2860a0267916a4da9d7c245))
+
 # [1.2.0](https://github.com/Ebaneck/gorgias-sre-assessment/compare/v1.1.0...v1.2.0) (2024-03-11)
 
 
