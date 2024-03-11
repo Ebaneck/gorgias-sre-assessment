@@ -1,4 +1,5 @@
 # Refactor to use multi-stage build with builder & release stages
+# Might consider using an alpine image for the release stage
 FROM python:3
 
 WORKDIR /app
