@@ -13,6 +13,10 @@ on:
 env:
   USER: claudeforlife
   REPO: flaskapp
+  PROJECT_ID: ${{ secrets.GKE_PROJECT_ID }}
+  GKE_CLUSTER: gorgias-sre-assessment
+  GKE_REGION: us-central1
+  GKE_ZONE: us-central1-a
 
 jobs:
   create-tag-release:
